@@ -8,29 +8,22 @@ namespace DataFetcher.JsonExporter
 {
     public class JsonExporter
     {
-        public async Task ExportAsync<T>(
-        T data,
-        string outputPath)
+        public async Task ExportAsync<T>(T data, string outputPath)
         {
-            string? directory =
-                Path.GetDirectoryName(outputPath);
+            string? directory = Path.GetDirectoryName(outputPath);
 
             if (!string.IsNullOrEmpty(directory))
             {
                 Directory.CreateDirectory(directory);
             }
 
-            string json =
-                JsonSerializer.Serialize(
-                    data,
+            string json = JsonSerializer.Serialize(data,
                     new JsonSerializerOptions
                     {
                         WriteIndented = true
                     });
 
-            await File.WriteAllTextAsync(
-                outputPath,
-                json);
+            await File.WriteAllTextAsync(outputPath, json);
 
             Console.WriteLine(
                 $"Generated: {outputPath}");
