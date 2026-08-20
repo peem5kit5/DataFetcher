@@ -1,0 +1,54 @@
+# Visual Studio
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vsidx
+
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# .NET / NuGet
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+
+# Test results
+TestResults/
+*.trx
+
+# ASP.NET
+*.pfx
+appsettings.Local.json
+
+# Logs
+*.log
+logs/
+
+# Secrets
+.env
+.env.*
+!.env.example
+serviceAccount*.json
+firebase-adminsdk*.json
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# JetBrains Rider
+.idea/
+
+# ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
