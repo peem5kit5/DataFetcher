@@ -23,12 +23,10 @@ if (!File.Exists(credentialsFile))
     return;
 }
 
-string configJson =
-    await File.ReadAllTextAsync(configFile);
+string configJson = await File.ReadAllTextAsync(configFile);
 
-FetcherConfig? config =
-    JsonSerializer.Deserialize<FetcherConfig>(
-        configJson,
+// If error on this line, it because of the path in appsettings.json is wrong.
+FetcherConfig? config = JsonSerializer.Deserialize<FetcherConfig>(configJson,
         new JsonSerializerOptions
         {
             PropertyNameCaseInsensitive = true
